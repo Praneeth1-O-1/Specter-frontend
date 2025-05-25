@@ -1,0 +1,58 @@
+
+@import "tailwindcss";
+
+.mainbg{
+  background-image: url("./assets/dot.svg");
+}
+
+.uploadbg{
+  background-image: url("./assets/image.png");
+  background-position: calc(-100%);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: movess linear 5s infinite;
+}
+
+.headbg{
+
+}
+
+.searchbg{
+  background-image: url("./assets/image.png");
+  background-position: calc(-100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.animebtn{
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.uploadf{
+  cursor: pointer;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.uploadf:active{
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+.animebtn:active{
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+
+@keyframes movess {
+  0%{
+    background-position: calc(-100%);
+  }
+  50%{
+    background-position: calc(100%);
+  }
+  100%{
+    background-position: calc(200%);
+  }
+}
