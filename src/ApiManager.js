@@ -5,7 +5,7 @@ class ApiManager{
 
     async getQuery(largeText) {
         try {
-            const response = await fetch(`http://localhost:5000/getVun`, {
+            const response = await fetch(`specter-backend-production.up.railway.app/getVun`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -26,7 +26,7 @@ class ApiManager{
     
     async getEmail(largeText,query) {
         try {
-            const response = await fetch(`http://localhost:5000/getEmail`, {
+            const response = await fetch(`specter-backend-production.up.railway.app/getEmail`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
