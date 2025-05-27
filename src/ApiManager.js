@@ -5,13 +5,14 @@ class ApiManager {
 
     async getQuery(largeText) {
         try {
-            const response = await fetch(`${this.url}/getVun`, {
+            const response = await fetch(`https://specter-backend-production.up.railway.app/getVun`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ text: largeText })
+                body: JSON.stringify({ query: largeText }) // ✅ Use 'query' instead of 'text'
             });
+
 
             const data = await response.json();
             console.log("Server Response:", data);
