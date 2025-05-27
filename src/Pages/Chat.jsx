@@ -16,7 +16,7 @@ const Chat = () => {
     }
       const fetchChatHistory = async () => {
           try {
-              const response = await fetch("http://localhost:5000/chat/history");
+              const response = await fetch("https://specter-backend-production.up.railway.app/history");
               const data = await response.json();
               if (data.success) {
                   setMessages(data.history);
@@ -41,7 +41,7 @@ const Chat = () => {
 
 
       try {
-          const response = await fetch("http://localhost:5000/chat", {
+          const response = await fetch("https://specter-backend-production.up.railway.app/chat", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ text: input }),
