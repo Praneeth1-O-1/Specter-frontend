@@ -1,6 +1,6 @@
 class ApiManager{
     ApiManager(){
-        this.url="http://localhost:5000"
+        this.url="specter-backend-production.up.railway.app"
     }
 
     async getQuery(largeText) {
