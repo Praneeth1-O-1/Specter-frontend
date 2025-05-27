@@ -1,53 +1,43 @@
-class ApiManager{
-    ApiManager(){
-        this.url="specter-backend-production.up.railway.app"
+class ApiManager {
+    constructor() {
+        this.url = "https://specter-backend-production.up.railway.app";
     }
 
     async getQuery(largeText) {
         try {
-            const response = await fetch(`specter-backend-production.up.railway.app/getVun`, {
+            const response = await fetch(`${this.url}/getVun`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ text: largeText }) // Send large text
+                body: JSON.stringify({ text: largeText })
             });
-    
-            const data = await response.json(); // Assuming the server returns JSON
+
+            const data = await response.json();
             console.log("Server Response:", data);
             return data;
         } catch (error) {
             console.error("Error:", error);
-            // return null;
         }
     }
 
-
-    
-    async getEmail(largeText,query) {
+    async getEmail(largeText, query) {
         try {
-            const response = await fetch(`specter-backend-production.up.railway.app/getEmail`, {
+            const response = await fetch(`${this.url}/getEmail`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ text: largeText ,query:query}) // Send large text
+                body: JSON.stringify({ text: largeText, query: query })
             });
-    
-            const data = await response.json(); // Assuming the server returns JSON
+
+            const data = await response.json();
             console.log("Server Response:", data);
             return data;
         } catch (error) {
             console.error("Error:", error);
-            // return null;
         }
     }
-
-
-
-
-
 }
-
 
 export default ApiManager;
